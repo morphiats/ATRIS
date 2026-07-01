@@ -37,25 +37,11 @@ header {
     background-position: center;
 }
 
-/* Hero Section with Animated Gradient */
+/* Hero Section */
 .hero { 
     text-align: center; 
     padding: 50px 20px;
-    background: linear-gradient(-45deg, #f5f5f5, #ffffff, #f5f5f5, #ffffff);
-    background-size: 400% 400%;
-    animation: gradientShift 15s ease infinite;
-}
-
-@keyframes gradientShift {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+    background: #f5f5f5;
 }
 
 /* Hero Headline Fade-in Animation */
