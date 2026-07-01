@@ -3,6 +3,100 @@ header { display: flex; justify-content: space-between; padding: 20px; align-ite
 .nav-logo { width: 100px; }
 .main-logo { width: 200px; margin-top: 50px; }
 .hero { text-align: center; padding: 50px; }
-.services { display: flex; justify-content: center; gap: 20px; padding: 40px; }
+.services { display: flex; justify-content: center; gap: 20px; padding: 40px; flex-wrap: wrap; }
 .card { background: white; padding: 20px; border-radius: 8px; width: 300px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-.cta { background: #00bcd4; color: white; padding: 15px 30px; border: none; cursor: pointer; }
+.cta { background: #00bcd4; color: white; padding: 15px 30px; border: none; cursor: pointer; border-radius: 4px; }
+.cta:hover { background: #0097a7; }
+
+/* Tab Navigation Styling */
+.tab-nav { 
+    display: flex; 
+    gap: 10px; 
+    align-items: center;
+}
+
+.tab-button {
+    padding: 12px 24px;
+    border: 2px solid #00bcd4;
+    background: white;
+    color: #00bcd4;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.tab-button:hover {
+    background: #e0f7fa;
+}
+
+.tab-button.active {
+    background: #00bcd4;
+    color: white;
+}
+
+.quote-btn {
+    background: #00bcd4;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+.quote-btn:hover {
+    background: #0097a7;
+}
+
+/* Tab Content Styling */
+.tab-content {
+    padding: 40px 20px;
+}
+
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.tab-pane h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Contact Form */
+.contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 14px;
+}
+
+.contact-form button {
+    align-self: flex-start;
+}
