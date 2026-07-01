@@ -1,25 +1,8 @@
-body, html {
-    height: 100%;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f4f4f4;
-    font-family: sans-serif;
-}
-
-.container {
-    text-align: center;
-}
-
-.logo {
-    max-width: 400px;
-    width: 100%;
-    height: auto;
-}
-
-h1 {
-    color: #333;
-    font-size: 1.2rem;
-    margin-top: 20px;
-}
+body { font-family: sans-serif; margin: 0; background: #f9f9f9; }
+header { display: flex; justify-content: space-between; padding: 20px; align-items: center; }
+.nav-logo { width: 100px; }
+.main-logo { width: 200px; margin-top: 50px; }
+.hero { text-align: center; padding: 50px; }
+.services { display: flex; justify-content: center; gap: 20px; padding: 40px; }
+.card { background: white; padding: 20px; border-radius: 8px; width: 300px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+.cta { background: #00bcd4; color: white; padding: 15px 30px; border: none; cursor: pointer; }
