@@ -22,11 +22,19 @@ header {
 .nav-logo { 
     width: 100px; 
     flex-shrink: 0;
+    background-image: url('ATRIS_LOGO.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .main-logo { 
     width: 200px; 
-    margin-top: 50px; 
+    margin-top: 50px;
+    background-image: url('ATRIS_LOGO.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 /* Hero Section with Animated Gradient */
