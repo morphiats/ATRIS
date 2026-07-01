@@ -1,3 +1,12 @@
+// Hamburger menu toggle
+const hamburger = document.getElementById('hamburger');
+const tabNav = document.getElementById('tabNav');
+
+hamburger.addEventListener('click', function() {
+    hamburger.classList.toggle('active');
+    tabNav.classList.toggle('active');
+});
+
 // Tab functionality
 document.querySelectorAll('.tab-button').forEach(button => {
     button.addEventListener('click', function() {
@@ -11,5 +20,11 @@ document.querySelectorAll('.tab-button').forEach(button => {
         // Add active class to clicked button and corresponding pane
         this.classList.add('active');
         document.getElementById(tabName).classList.add('active');
+        
+        // Close mobile menu after selection
+        if (window.innerWidth <= 768) {
+            hamburger.classList.remove('active');
+            tabNav.classList.remove('active');
+        }
     });
 });

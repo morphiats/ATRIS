@@ -1,18 +1,116 @@
-body { font-family: sans-serif; margin: 0; background: #f9f9f9; }
-header { display: flex; justify-content: space-between; padding: 20px; align-items: center; }
-.nav-logo { width: 100px; }
-.main-logo { width: 200px; margin-top: 50px; }
-.hero { text-align: center; padding: 50px; }
-.services { display: flex; justify-content: center; gap: 20px; padding: 40px; flex-wrap: wrap; }
-.card { background: white; padding: 20px; border-radius: 8px; width: 300px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-.cta { background: #00bcd4; color: white; padding: 15px 30px; border: none; cursor: pointer; border-radius: 4px; }
-.cta:hover { background: #0097a7; }
+* {
+    box-sizing: border-box;
+}
+
+body { 
+    font-family: sans-serif; 
+    margin: 0; 
+    background: #f9f9f9; 
+}
+
+header { 
+    display: flex; 
+    justify-content: space-between; 
+    padding: 20px; 
+    align-items: center; 
+    gap: 20px;
+    flex-wrap: wrap;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.nav-logo { 
+    width: 100px; 
+    flex-shrink: 0;
+}
+
+.main-logo { 
+    width: 200px; 
+    margin-top: 50px; 
+}
+
+.hero { 
+    text-align: center; 
+    padding: 50px 20px; 
+}
+
+.hero h1 {
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+.hero p {
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.services { 
+    display: flex; 
+    justify-content: center; 
+    gap: 20px; 
+    padding: 40px 20px; 
+    flex-wrap: wrap; 
+}
+
+.card { 
+    background: white; 
+    padding: 20px; 
+    border-radius: 8px; 
+    width: 300px; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+}
+
+.cta { 
+    background: #00bcd4; 
+    color: white; 
+    padding: 15px 30px; 
+    border: none; 
+    cursor: pointer; 
+    border-radius: 4px; 
+    font-weight: 600;
+}
+
+.cta:hover { 
+    background: #0097a7; 
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    gap: 6px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #00bcd4;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(10px, 10px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
 
 /* Tab Navigation Styling */
 .tab-nav { 
     display: flex; 
     gap: 10px; 
     align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
 }
 
 .tab-button {
@@ -25,6 +123,7 @@ header { display: flex; justify-content: space-between; padding: 20px; align-ite
     font-size: 14px;
     font-weight: 500;
     transition: all 0.3s ease;
+    white-space: nowrap;
 }
 
 .tab-button:hover {
@@ -45,6 +144,7 @@ header { display: flex; justify-content: space-between; padding: 20px; align-ite
     border-radius: 4px;
     font-weight: 600;
     transition: background 0.3s ease;
+    white-space: nowrap;
 }
 
 .quote-btn:hover {
@@ -54,6 +154,8 @@ header { display: flex; justify-content: space-between; padding: 20px; align-ite
 /* Tab Content Styling */
 .tab-content {
     padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .tab-pane {
@@ -99,4 +201,101 @@ header { display: flex; justify-content: space-between; padding: 20px; align-ite
 
 .contact-form button {
     align-self: flex-start;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+    }
+
+    .hamburger {
+        display: flex;
+        position: absolute;
+        right: 15px;
+        top: 15px;
+    }
+
+    .tab-nav {
+        width: 100%;
+        flex-direction: column;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        gap: 0;
+    }
+
+    .tab-nav.active {
+        max-height: 500px;
+        gap: 10px;
+    }
+
+    .tab-button,
+    .quote-btn {
+        width: 100%;
+        text-align: left;
+        padding: 12px 15px;
+    }
+
+    .nav-logo {
+        width: 80px;
+    }
+
+    .hero {
+        padding: 30px 15px;
+    }
+
+    .hero h1 {
+        font-size: 24px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .services {
+        padding: 20px 15px;
+        gap: 15px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .tab-content {
+        padding: 20px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-logo {
+        width: 60px;
+    }
+
+    .main-logo {
+        width: 150px;
+    }
+
+    .hero h1 {
+        font-size: 18px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .cta {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+
+    .tab-button,
+    .quote-btn {
+        font-size: 13px;
+        padding: 10px 12px;
+    }
 }
