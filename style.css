@@ -1,0 +1,25 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4;
+    font-family: sans-serif;
+}
+
+.container {
+    text-align: center;
+}
+
+.logo {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+}
+
+h1 {
+    color: #333;
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
