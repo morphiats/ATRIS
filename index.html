@@ -9,12 +9,12 @@
 <body>
     <header>
         <img src="ATRIS_LOGO.jpg" alt="ATRIS Logo" class="nav-logo">
-        <nav>
-            <a href="#">Services</a>
-            <a href="#">Portfolio</a>
-            <a href="#">Technology</a>
-            <a href="#">Contact</a>
-            <button>Get a Quote</button>
+        <nav class="tab-nav">
+            <button class="tab-button active" data-tab="services">Services</button>
+            <button class="tab-button" data-tab="portfolio">Portfolio</button>
+            <button class="tab-button" data-tab="technology">Technology</button>
+            <button class="tab-button" data-tab="contact">Contact</button>
+            <button class="quote-btn">Get a Quote</button>
         </nav>
     </header>
 
@@ -26,11 +26,49 @@
             <button class="cta">START YOUR PROJECT</button>
         </section>
 
-        <section class="services">
-            <div class="card"><h3>Web Architecture & Engineering</h3><p>Scalable, robust foundations for complex web platforms.</p></div>
-            <div class="card"><h3>User Interface Solutions</h3><p>Intuitive and engaging designs for a seamless user experience.</p></div>
-            <div class="card"><h3>Tech Research & Integration</h3><p>Leveraging the latest tech stack for optimized performance.</p></div>
-        </section>
+        <!-- Tab Content Sections -->
+        <div class="tab-content">
+            <section id="services" class="tab-pane active">
+                <h2>Our Services</h2>
+                <div class="services">
+                    <div class="card"><h3>Web Architecture & Engineering</h3><p>Scalable, robust foundations for complex web platforms.</p></div>
+                    <div class="card"><h3>User Interface Solutions</h3><p>Intuitive and engaging designs for a seamless user experience.</p></div>
+                    <div class="card"><h3>Tech Research & Integration</h3><p>Leveraging the latest tech stack for optimized performance.</p></div>
+                </div>
+            </section>
+
+            <section id="portfolio" class="tab-pane">
+                <h2>Portfolio</h2>
+                <div class="services">
+                    <div class="card"><h3>Project 1</h3><p>Description of your completed project goes here.</p></div>
+                    <div class="card"><h3>Project 2</h3><p>Description of your completed project goes here.</p></div>
+                    <div class="card"><h3>Project 3</h3><p>Description of your completed project goes here.</p></div>
+                </div>
+            </section>
+
+            <section id="technology" class="tab-pane">
+                <h2>Technology Stack</h2>
+                <div class="services">
+                    <div class="card"><h3>Frontend</h3><p>HTML5, CSS3, JavaScript, React, Vue.js</p></div>
+                    <div class="card"><h3>Backend</h3><p>Node.js, Python, databases, APIs</p></div>
+                    <div class="card"><h3>Tools & Services</h3><p>Git, Docker, AWS, CI/CD pipelines</p></div>
+                </div>
+            </section>
+
+            <section id="contact" class="tab-pane">
+                <h2>Contact Us</h2>
+                <div class="contact-form">
+                    <form>
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                        <button type="submit" class="cta">Send Message</button>
+                    </form>
+                </div>
+            </section>
+        </div>
     </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
