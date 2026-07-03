@@ -1,80 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ATRIS | Architectural Tech Research & Interface Solutions</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ATRIS — Architectural Tech Research & Interface Solutions</title>
+  <meta name="description" content="We build high-performance platforms, complex digital interfaces, and research-backed tech integration — engineered to carry real load." />
+  <meta property="og:title" content="ATRIS — Architectural Tech Research & Interface Solutions" />
+  <meta property="og:description" content="A web design company building clean, fast, purposeful websites." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
-        <img src="ATRIS MAIN LOGO.png" alt="ATRIS Logo" class="nav-logo">
-        <button class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <nav class="tab-nav" id="tabNav">
-            <button class="tab-button active" data-tab="services">Services</button>
-            <button class="tab-button" data-tab="portfolio">Portfolio</button>
-            <button class="tab-button" data-tab="technology">Technology</button>
-            <button class="tab-button" data-tab="contact">Contact</button>
-            <button class="quote-btn">Get a Quote</button>
-        </nav>
-    </header>
 
-    <main>
-        <section class="hero">
-            <img src="ATRIS MAIN LOGO.png" alt="ATRIS Logo" class="main-logo" loading="lazy">
-            <h1>Crafting Digital Foundations: Architectural Web & Interface Solutions</h1>
-            <p>We build high-performance, responsive websites and complex digital interfaces, blending engineering precision with cutting-edge technology.</p>
-            <button class="cta">START YOUR PROJECT</button>
-        </section>
+  <!-- NAV -->
+  <header class="a-nav">
+    <a href="/" class="a-logo">AT<span>R</span>IS</a>
+    <nav aria-label="Primary navigation">
+      <ul class="a-nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="#contact" class="a-nav-cta">Get a Quote</a>
+    <button class="a-hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
 
-        <!-- Tab Content Sections -->
-        <div class="tab-content">
-            <section id="services" class="tab-pane active">
-                <h2>Our Services</h2>
-                <div class="services">
-                    <div class="card"><h3>Web Architecture & Engineering</h3><p>Scalable, robust foundations for complex web platforms.</p></div>
-                    <div class="card"><h3>User Interface Solutions</h3><p>Intuitive and engaging designs for a seamless user experience.</p></div>
-                    <div class="card"><h3>Tech Research & Integration</h3><p>Leveraging the latest tech stack for optimized performance.</p></div>
-                </div>
-            </section>
+  <!-- MOBILE NAV DRAWER -->
+  <div class="a-mobile-nav" aria-hidden="true">
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#contact" class="a-nav-cta">Get a Quote</a></li>
+    </ul>
+  </div>
 
-            <section id="portfolio" class="tab-pane">
-                <h2>Portfolio</h2>
-                <div class="services">
-                    <div class="card"><h3>Project 1</h3><p>Description of your completed project goes here.</p></div>
-                    <div class="card"><h3>Project 2</h3><p>Description of your completed project goes here.</p></div>
-                    <div class="card"><h3>Project 3</h3><p>Description of your completed project goes here.</p></div>
-                </div>
-            </section>
+  <main>
 
-            <section id="technology" class="tab-pane">
-                <h2>Technology Stack</h2>
-                <div class="services">
-                    <div class="card"><h3>Frontend</h3><p>HTML5, CSS3, JavaScript, React, Vue.js</p></div>
-                    <div class="card"><h3>Backend</h3><p>Node.js, Python, databases, APIs</p></div>
-                    <div class="card"><h3>Tools & Services</h3><p>Git, Docker, AWS, CI/CD pipelines</p></div>
-                </div>
-            </section>
-
-            <section id="contact" class="tab-pane">
-                <h2>Contact Us</h2>
-                <div class="contact-form">
-                    <form action="https://formspree.io/f/xqevyjpo" method="POST">
-                        <input type="text" name="name" placeholder="Your Name" required>
-                        <input type="email" name="email" placeholder="Your Email" required>
-                        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-                        <button type="submit" class="cta">Send Message</button>
-                    </form>
-                </div>
-            </section>
+    <!-- HERO -->
+    <section class="a-hero" id="home">
+      <div class="a-hero-grid" aria-hidden="true"></div>
+      <div class="a-hero-inner">
+        <div class="a-eyebrow">
+          <span class="a-eyebrow-dot" aria-hidden="true"></span>
+          Web Architecture & Interface Engineering
         </div>
-    </main>
+        <h1>We design & build <em>websites</em> that work.</h1>
+        <p class="a-hero-sub">ATRIS — Architectural Tech Research & Interface Solutions — is a web design company building clean, fast, purposeful websites for businesses ready to show up online.</p>
+        <div class="a-hero-actions">
+          <a href="#contact" class="a-btn-primary">Start a project</a>
+          <a href="#portfolio" class="a-btn-ghost">See our work</a>
+        </div>
+        <div class="a-hero-pillars">
+          <div class="a-pillar"><span>Custom design</span></div>
+          <div class="a-pillar"><span>Fast delivery</span></div>
+          <div class="a-pillar"><span>Built to grow</span></div>
+        </div>
+      </div>
+    </section>
 
-    <script src="script.js"></script>
+    <!-- SERVICES -->
+    <section class="a-services" id="services">
+      <div class="a-container">
+        <div class="a-section-label">What we build</div>
+        <div class="a-services-grid">
+
+          <article class="a-service-card" data-num="01">
+            <div class="a-service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <h3>Web Architecture & Engineering</h3>
+            <p>Scalable, observable system design for complex web platforms. We map every dependency before writing a line.</p>
+          </article>
+
+          <article class="a-service-card" data-num="02">
+            <div class="a-service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            </div>
+            <h3>User Interface Solutions</h3>
+            <p>Interface design that eliminates friction. We prototype, test, and ship UI that earns user trust on first interaction.</p>
+          </article>
+
+          <article class="a-service-card" data-num="03">
+            <div class="a-service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg>
+            </div>
+            <h3>Tech Research & Integration</h3>
+            <p>Emerging stack evaluation, vendor selection, and production integration — with a receipts-first approach to every claim.</p>
+          </article>
+
+          <article class="a-service-card" data-num="04">
+            <div class="a-service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3>Platform Security & Hardening</h3>
+            <p>Security-by-design from the first commit. Threat modeling, pen testing, and continuous compliance monitoring built in.</p>
+          </article>
+
+          <article class="a-service-card" data-num="05">
+            <div class="a-service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <h3>Performance Engineering</h3>
+            <p>From cold start to render pipeline — we instrument, benchmark, and optimize until the numbers tell the truth.</p>
+          </article>
+
+          <article class="a-service-card" data-num="06">
+            <div class="a-service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+            </div>
+            <h3>API Design & Systems</h3>
+            <p>Contract-first API architecture. We design, document, and govern APIs built for longevity, not the next sprint.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- TECH STRIP -->
+    <div class="a-tech">
+      <div class="a-container">
+        <div class="a-tech-inner">
+          <span class="a-tech-label">Stack fluency</span>
+          <div class="a-tech-pills">
+            <span class="a-pill">Next.js</span>
+            <span class="a-pill">React</span>
+            <span class="a-pill">Node.js</span>
+            <span class="a-pill">TypeScript</span>
+            <span class="a-pill">PostgreSQL</span>
+            <span class="a-pill">Supabase</span>
+            <span class="a-pill">Vercel</span>
+            <span class="a-pill">AWS</span>
+            <span class="a-pill">GraphQL</span>
+            <span class="a-pill">Web3</span>
+            <span class="a-pill">Python</span>
+            <span class="a-pill">Rust</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROCESS -->
+    <section class="a-process" id="process">
+      <div class="a-container">
+        <div class="a-process-inner">
+          <div class="a-process-intro">
+            <div class="a-section-label">How we work</div>
+            <h2>Structured process.<br>No surprises mid-build.</h2>
+            <p>Every engagement runs through the same four-phase structure — so you always know what we're doing and why.</p>
+          </div>
+          <div class="a-process-steps">
+            <div class="a-step">
+              <div class="a-step-num">01</div>
+              <div>
+                <h4>Discovery & scoping</h4>
+                <p>We map your technical environment, constraints, and goals before touching a codebase. Deliverable: a scoped architecture brief.</p>
+              </div>
+            </div>
+            <div class="a-step">
+              <div class="a-step-num">02</div>
+              <div>
+                <h4>System design & prototype</h4>
+                <p>Architecture diagrams, data models, and interactive prototypes for sign-off. Nothing gets engineered until we agree on structure.</p>
+              </div>
+            </div>
+            <div class="a-step">
+              <div class="a-step-num">03</div>
+              <div>
+                <h4>Phased build & testing</h4>
+                <p>Milestone-based delivery with continuous integration, automated test suites, and weekly client reviews built in.</p>
+              </div>
+            </div>
+            <div class="a-step">
+              <div class="a-step-num">04</div>
+              <div>
+                <h4>Launch & knowledge transfer</h4>
+                <p>Full documentation, runbooks, and a handoff session so your team owns the system — not just the surface.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA / CONTACT -->
+    <section class="a-cta-section" id="contact">
+      <div class="a-cta-bg" aria-hidden="true"></div>
+      <div class="a-container">
+        <div class="a-cta-inner">
+          <p class="a-cta-eyebrow">Ready to build?</p>
+          <h2>Your platform deserves<br>a real foundation.</h2>
+          <p>Tell us what you're building and we'll tell you what it takes.</p>
+          <div class="a-cta-row">
+            <a href="mailto:hello@atris.dev" class="a-btn-primary">Start a project</a>
+            <a href="mailto:hello@atris.dev" class="a-btn-ghost">Schedule a call</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="a-footer">
+    <div class="a-container">
+      <div class="a-footer-inner">
+        <div class="a-footer-logo">AT<span>R</span>IS</div>
+        <p class="a-footer-tagline">Architectural Tech Research & Interface Solutions</p>
+        <p class="a-footer-copy">&copy; 2026 ATRIS. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
