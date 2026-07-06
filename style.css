@@ -412,3 +412,7 @@ a { text-decoration: none; color: inherit; }
 @media (max-width: 700px) {
   .a-service-card::after { bottom: 20px; right: 20px; }
 }
+
+/* PRICING CTA STACK */
+.a-pricing-card { gap: 0; }
+.a-pricing-pay { margin-top: 10px; }
