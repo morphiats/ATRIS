@@ -1,33 +1,86 @@
-// Hamburger menu toggle
-const hamburger = document.getElementById('hamburger');
-const tabNav = document.getElementById('tabNav');
+/* ============================================================
+   ATRIS — script.js
+   ============================================================ */
 
-hamburger.addEventListener('click', function() {
-    hamburger.classList.toggle('active');
-    tabNav.classList.toggle('active');
-});
+(function () {
+  'use strict';
 
-// Tab functionality
-document.querySelectorAll('.tab-button').forEach(button => {
-    button.addEventListener('click', function() {
-        // Get the tab name from data attribute
-        const tabName = this.getAttribute('data-tab');
-        
-        // Remove active class from all buttons and panes
-        document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
-        document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
-        
-        // Add active class to clicked button and corresponding pane
-        this.classList.add('active');
-        document.getElementById(tabName).classList.add('active');
-        
-        // Close mobile menu after selection
-        if (window.innerWidth <= 768) {
-            hamburger.classList.remove('active');
-            tabNav.classList.remove('active');
-        }
+  // ---- Mobile nav toggle ----
+  const hamburger = document.querySelector('.a-hamburger');
+  const mobileNav = document.querySelector('.a-mobile-nav');
+
+  if (hamburger && mobileNav) {
+    hamburger.addEventListener('click', function () {
+      const isOpen = mobileNav.classList.toggle('is-open');
+      hamburger.setAttribute('aria-expanded', isOpen);
+      mobileNav.setAttribute('aria-hidden', !isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
     });
-});
+
+    mobileNav.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        mobileNav.classList.remove('is-open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        mobileNav.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      });
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && mobileNav.classList.contains('is-open')) {
+        mobileNav.classList.remove('is-open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        mobileNav.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        hamburger.focus();
+      }
+    });
+  }
+
+  // ---- Scroll-reveal for service cards ----
+  if ('IntersectionObserver' in window) {
+    const cards = document.querySelectorAll('.a-service-card, .a-step');
+
+    const style = document.createElement('style');
+    style.textContent = `
+      .a-service-card, .a-step {
+        opacity: 0;
+        transform: translateY(16px);
+        transition: opacity 0.45s ease, transform 0.45s ease;
+      }
+      .a-service-card.revealed, .a-step.revealed {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    `;
+    document.head.appendChild(style);
+
+    const observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+    );
+
+    cards.forEach(function (card) { observer.observe(card); });
+  }
+
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReduced) {
+    document.querySelectorAll('.a-service-card, .a-step').forEach(function (el) {
+      el.style.opacity = '1';
+      el.style.transform = 'none';
+      el.style.transition = 'none';
+    });
+  }
+
+})();
+
 /* ============================================================
    SERVICE CARD EXPAND
    ============================================================ */
